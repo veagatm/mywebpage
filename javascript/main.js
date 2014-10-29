@@ -8,7 +8,7 @@ function callNativeApp () {
 
 setTimeout(function () {
     callNativeApp();
-}, 5000);
+}, 20000);
 
 function redHeader() {
     document.querySelector('h1').style.color = "red";
