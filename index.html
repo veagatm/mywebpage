@@ -14,6 +14,7 @@
 
         <button type="" onclick="callNativeApp()">Click me</button>
         <button type="" onclick="callCancelNotification()">Cancel</button>
+        <button type="" onclick="callListNotifications()">List Notifications</button>
         <script>
             function callNativeApp () {
                 try {
@@ -28,6 +29,14 @@
                 } catch(err) {
                     console.log('The native context does not exist yet');
                 }
+            }
+            function callListNotifications() {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("2-2-this-damn-shit");
+                } catch(err) {
+                    console.log('The native context does not exist yet');
+                }
+
             }
 
             
