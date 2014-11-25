@@ -12,11 +12,19 @@
     <body>
         <h1>WKWebView Test</h1>
 
-        <button type="" onclick="callNativeApp()">Click me</button>
+        <button type="" onclick="callNativeApp()">Make Notification 1</button>
+        <button type="" onclick="callNativeApp1()">Make Notification 2</button>
         <button type="" onclick="callCancelNotification()">Cancel</button>
         <button type="" onclick="callListNotifications()">List Notifications</button>
         <script>
             function callNativeApp () {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("0-1-this-help-fuck");
+                } catch(err) {
+                    console.log('The native context does not exist yet');
+                }
+            }
+            function callNativeApp1 () {
                 try {
                     webkit.messageHandlers.callbackHandler.postMessage("0-2-this-help-fuck");
                 } catch(err) {
